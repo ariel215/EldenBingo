@@ -134,6 +134,7 @@ namespace EldenBingo.UI
             _keywordColorAlphaTrackBar.Value = Properties.Settings.Default.KeywordColorsAlpha;
             _keywordColorAlphaTrackBar.ValueChanged += (o, e) => updateKeywordColorText();
 
+            _opacityTrackBar.Value = (int)(Properties.Settings.Default.Opacity * _opacityTrackBar.Maximum);
             updateSizeEnable();
             updatePositionEnable();
             updateMaxSizeEnable();
@@ -247,6 +248,9 @@ namespace EldenBingo.UI
 
             Properties.Settings.Default.LastSettingsTab = tabControl1.SelectedIndex;
 
+            MainForm.Instance.Opacity = Properties.Settings.Default.Opacity =
+                (float)_opacityTrackBar.Value / _opacityTrackBar.Maximum;
+                
             Properties.Settings.Default.Save();
             return true;
         }
@@ -373,6 +377,11 @@ namespace EldenBingo.UI
                 _keywordColors = dialog.Colors;
                 updateKeywordColorText();
             }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }
