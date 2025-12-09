@@ -318,9 +318,9 @@
             label16.AutoSize = true;
             label16.Location = new Point(9, 133);
             label16.Name = "label16";
-            label16.Size = new Size(50, 15);
+            label16.Size = new Size(69, 15);
             label16.TabIndex = 7;
-            label16.Text = "Invisible";
+            label16.Text = "Transparent";
             // 
             // label15
             // 
@@ -335,10 +335,11 @@
             // 
             _opacityTrackBar.Location = new Point(0, 98);
             _opacityTrackBar.Maximum = 20;
+            _opacityTrackBar.Minimum = 3;
             _opacityTrackBar.Name = "_opacityTrackBar";
             _opacityTrackBar.Size = new Size(234, 45);
             _opacityTrackBar.TabIndex = 5;
-            _opacityTrackBar.Scroll += trackBar1_Scroll;
+            _opacityTrackBar.Value = 3;
             // 
             // _alwaysOnTopCheckbox
             // 
