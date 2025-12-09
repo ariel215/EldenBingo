@@ -56,6 +56,8 @@ namespace EldenBingo
                 AutoScaleMode = prev;
             }
 
+            Opacity = Properties.Settings.Default.Opacity;
+
             FormClosing += async (o, e) =>
             {
                 _autoReconnect = false;
@@ -133,6 +135,11 @@ namespace EldenBingo
             }
             base.WndProc(ref m);
         }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        { 
+        }
+
 
         private void addVersionToTitle()
         {

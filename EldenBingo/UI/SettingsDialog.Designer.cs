@@ -45,6 +45,10 @@
             _bingoMaxXTextBox = new TextBox();
             label4 = new Label();
             groupBox3 = new GroupBox();
+            label17 = new Label();
+            label16 = new Label();
+            label15 = new Label();
+            _opacityTrackBar = new TrackBar();
             _alwaysOnTopCheckbox = new CheckBox();
             _colorPanel = new Panel();
             label5 = new Label();
@@ -90,6 +94,7 @@
             _checkUpdatesCheckBox = new CheckBox();
             tabPage2 = new TabPage();
             groupBox11 = new GroupBox();
+            _arrowNavigationCheckBox = new CheckBox();
             _numpadNavigationCheckBox = new CheckBox();
             groupBox9 = new GroupBox();
             panel2 = new Panel();
@@ -98,10 +103,10 @@
             label13 = new Label();
             tabPage3 = new TabPage();
             panel1 = new Panel();
-            _arrowNavigationCheckBox = new CheckBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)_opacityTrackBar).BeginInit();
             groupBox4.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -248,7 +253,7 @@
             _bingoCustomMaxSizeRadioButton.AutoSize = true;
             _bingoCustomMaxSizeRadioButton.Location = new Point(9, 46);
             _bingoCustomMaxSizeRadioButton.Name = "_bingoCustomMaxSizeRadioButton";
-            _bingoCustomMaxSizeRadioButton.Size = new Size(116, 19);
+            _bingoCustomMaxSizeRadioButton.Size = new Size(115, 19);
             _bingoCustomMaxSizeRadioButton.TabIndex = 32;
             _bingoCustomMaxSizeRadioButton.TabStop = true;
             _bingoCustomMaxSizeRadioButton.Text = "Custom Max Size";
@@ -259,7 +264,7 @@
             _bingoNoMaxSizeRadioButton.AutoSize = true;
             _bingoNoMaxSizeRadioButton.Location = new Point(9, 22);
             _bingoNoMaxSizeRadioButton.Name = "_bingoNoMaxSizeRadioButton";
-            _bingoNoMaxSizeRadioButton.Size = new Size(122, 19);
+            _bingoNoMaxSizeRadioButton.Size = new Size(121, 19);
             _bingoNoMaxSizeRadioButton.TabIndex = 31;
             _bingoNoMaxSizeRadioButton.TabStop = true;
             _bingoNoMaxSizeRadioButton.Text = "No Maximum Size";
@@ -283,22 +288,63 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(label17);
+            groupBox3.Controls.Add(label16);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(_opacityTrackBar);
             groupBox3.Controls.Add(_alwaysOnTopCheckbox);
             groupBox3.Controls.Add(_colorPanel);
             groupBox3.Controls.Add(label5);
             groupBox3.Location = new Point(8, 6);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(240, 90);
+            groupBox3.Size = new Size(240, 155);
             groupBox3.TabIndex = 1;
             groupBox3.TabStop = false;
             groupBox3.Text = "Appearance";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(185, 133);
+            label17.Name = "label17";
+            label17.Size = new Size(49, 15);
+            label17.TabIndex = 8;
+            label17.Text = "Opaque";
+            label17.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(9, 133);
+            label16.Name = "label16";
+            label16.Size = new Size(50, 15);
+            label16.TabIndex = 7;
+            label16.Text = "Invisible";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(6, 80);
+            label15.Name = "label15";
+            label15.Size = new Size(48, 15);
+            label15.TabIndex = 6;
+            label15.Text = "Opacity";
+            // 
+            // _opacityTrackBar
+            // 
+            _opacityTrackBar.Location = new Point(0, 98);
+            _opacityTrackBar.Maximum = 20;
+            _opacityTrackBar.Name = "_opacityTrackBar";
+            _opacityTrackBar.Size = new Size(234, 45);
+            _opacityTrackBar.TabIndex = 5;
+            _opacityTrackBar.Scroll += trackBar1_Scroll;
+            // 
             // _alwaysOnTopCheckbox
             // 
             _alwaysOnTopCheckbox.AutoSize = true;
-            _alwaysOnTopCheckbox.Location = new Point(12, 58);
+            _alwaysOnTopCheckbox.Location = new Point(9, 54);
             _alwaysOnTopCheckbox.Name = "_alwaysOnTopCheckbox";
-            _alwaysOnTopCheckbox.Size = new Size(102, 19);
+            _alwaysOnTopCheckbox.Size = new Size(103, 19);
             _alwaysOnTopCheckbox.TabIndex = 4;
             _alwaysOnTopCheckbox.Text = "Always on Top";
             _alwaysOnTopCheckbox.UseVisualStyleBackColor = true;
@@ -523,7 +569,7 @@
             _numKeywordsLabel.AutoSize = true;
             _numKeywordsLabel.Location = new Point(89, 217);
             _numKeywordsLabel.Name = "_numKeywordsLabel";
-            _numKeywordsLabel.Size = new Size(103, 15);
+            _numKeywordsLabel.Size = new Size(102, 15);
             _numKeywordsLabel.TabIndex = 27;
             _numKeywordsLabel.Text = "(%x% active rules)";
             // 
@@ -611,7 +657,7 @@
             groupBox8.Controls.Add(_volumeLabel);
             groupBox8.Controls.Add(_volumeTrackBar);
             groupBox8.Controls.Add(_soundCheckBox);
-            groupBox8.Location = new Point(8, 102);
+            groupBox8.Location = new Point(11, 164);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(240, 198);
             groupBox8.TabIndex = 5;
@@ -746,6 +792,16 @@
             groupBox11.TabStop = false;
             groupBox11.Text = "Hotkey";
             // 
+            // _arrowNavigationCheckBox
+            // 
+            _arrowNavigationCheckBox.AutoSize = true;
+            _arrowNavigationCheckBox.Location = new Point(9, 102);
+            _arrowNavigationCheckBox.Name = "_arrowNavigationCheckBox";
+            _arrowNavigationCheckBox.Size = new Size(119, 19);
+            _arrowNavigationCheckBox.TabIndex = 45;
+            _arrowNavigationCheckBox.Text = "Arrow Navigation";
+            _arrowNavigationCheckBox.UseVisualStyleBackColor = true;
+            // 
             // _numpadNavigationCheckBox
             // 
             _numpadNavigationCheckBox.AutoSize = true;
@@ -826,16 +882,6 @@
             panel1.Size = new Size(521, 29);
             panel1.TabIndex = 34;
             // 
-            // _arrowNavigationCheckBox
-            // 
-            _arrowNavigationCheckBox.AutoSize = true;
-            _arrowNavigationCheckBox.Location = new Point(9, 102);
-            _arrowNavigationCheckBox.Name = "_arrowNavigationCheckBox";
-            _arrowNavigationCheckBox.Size = new Size(119, 19);
-            _arrowNavigationCheckBox.TabIndex = 45;
-            _arrowNavigationCheckBox.Text = "Arrow Navigation";
-            _arrowNavigationCheckBox.UseVisualStyleBackColor = true;
-            // 
             // SettingsDialog
             // 
             AcceptButton = _okButton;
@@ -858,6 +904,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)_opacityTrackBar).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox5.ResumeLayout(false);
@@ -958,5 +1005,9 @@
         private TrackBar _keywordColorAlphaTrackBar;
         private CheckBox _numpadNavigationCheckBox;
         private CheckBox _arrowNavigationCheckBox;
+        private TrackBar _opacityTrackBar;
+        private Label label15;
+        private Label label17;
+        private Label label16;
     }
 }
