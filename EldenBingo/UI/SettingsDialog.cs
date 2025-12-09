@@ -250,7 +250,7 @@ namespace EldenBingo.UI
 
             MainForm.Instance.Opacity = Properties.Settings.Default.Opacity =
                 (float)_opacityTrackBar.Value / _opacityTrackBar.Maximum;
-                
+
             Properties.Settings.Default.Save();
             return true;
         }
@@ -379,7 +379,7 @@ namespace EldenBingo.UI
             }
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void label16_Click(object sender, EventArgs e)
         {
 
         }
