@@ -209,7 +209,7 @@
             _changeTeamButton.ImageScaling = ToolStripItemImageScaling.None;
             _changeTeamButton.ImageTransparentColor = Color.Magenta;
             _changeTeamButton.Name = "_changeTeamButton";
-            _changeTeamButton.Size = new Size(83, 67);
+            _changeTeamButton.Size = new Size(84, 67);
             _changeTeamButton.Text = "Change Team";
             _changeTeamButton.TextAlign = ContentAlignment.BottomCenter;
             _changeTeamButton.TextImageRelation = TextImageRelation.ImageAboveText;
